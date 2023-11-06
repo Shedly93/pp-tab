@@ -1,5 +1,8 @@
+let modalEdit;
+
 document.addEventListener("DOMContentLoaded", function () {
     const openModalButton = document.getElementById("ajou-modal");
+ modalEdit = document.getElementById("modal-edit"); 
     const modal = document.getElementById("modal");
 
     openModalButton.addEventListener("click", function () {
@@ -7,13 +10,18 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log('Modal Affiché');
     });
 
-
     const closeModal = document.getElementById("closeModal");
     closeModal.addEventListener("click", function () {
         modal.style.display = "none";
         console.log('Modal Fermé');
     });
 
+
+    const closeModalEdit = document.getElementById("closeEditModal");
+    closeModalEdit.addEventListener("click", function () {
+        modalEdit.style.display = "none";
+        console.log('Modal Edit Fermé');
+    });
     const addForm = document.getElementById("addForm");
     const editForm = document.getElementById("upForm");
     const tabBody = document.getElementById("tab-body");
@@ -113,7 +121,7 @@ class StudentManager {
                 <td>${student.moyenne2}</td>
                 <td>${student.moyenneFinale}</td>
                 <td>
-                <button type="button" class="edit" data-index="${index}">Modifier</button>
+                    <button type="button" class="edit" data-index="${index}">Modifier</button>
                 </td>
                 <td>
                     <button class="delete" data-index="${index}">Supprimer</button>
@@ -121,14 +129,14 @@ class StudentManager {
             `;
 
             tabBody.appendChild(newRow);
-          const editButton = newRow.querySelector(".edit");
-          editButton.addEventListener("click", () => {
-              this.editStudent(index);
-          });
+            const editButton = newRow.querySelector(".edit");
+            editButton.addEventListener("click", () => {
+                this.editStudent(index);
+            });
         });
     }
 
-    editStudent(index) {
+   editStudent(index) {
         this.editIndex = index;
         const student = this.students[index];
 
@@ -138,7 +146,9 @@ class StudentManager {
         document.getElementById('EnoteDS2').value = student.noteDS2;
         document.getElementById('Eexamen2').value = student.examen2;
 
-        // Ajoutez des console.log pour le débogage
+        const modalEdit = document.getElementById('modal-edit');
+        modalEdit.style.display = "block";
+
         console.log('Edit Student Clicked');
         console.log('Edit Index:', index);
     }
