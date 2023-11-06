@@ -9,8 +9,36 @@
 }
 
 body {
-  background: #105469;
-  font-family: 'Open Sans', sans-serif;
+    background: #105469;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header-pp{
+    font-size: xx-large;
+    font-family: sans-serif;
+    font-weight: 700;
+    background: #e2b842;
+    border-radius: 15px;
+    width: 35%;
+    text-align: center;
+    position: absolute;
+    top: 10%;
+}
+
+.div-body{
+    background: #e2b842;
+    border-radius: 15px;
+    padding: 1%;
+    height: 50%;
 }
 
 table {
@@ -187,17 +215,17 @@ input[type="submit"]:hover {
 }
 
 .edit {
-  background: #E2B842;
-  color: #012B39;
-  font-weight: 600;
-  border: none;
-  padding: 0.5em 1em;
-  cursor: pointer;
+    background: #012b39;
+    color: #e7e7e7;
+    font-weight: 600;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
 }
 
 .edit:hover {
-  background: #fff;
-  color: #012B39;
+    background: #997100;
+    color: #012B39;
 }
 
 .delete {
